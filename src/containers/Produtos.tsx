@@ -1,15 +1,13 @@
-import  Produto  from '../components/Produto';
+import Produto from '../components/Produto'
 
-import { useGetJogosQuery } from '../services/api';
+import { useGetJogosQuery } from '../services/api'
 
-import * as S from './styles';
+import * as S from './styles'
 
-const ProdutosComponent =() =>{
-  const{data: produtos, isLoading} = useGetJogosQuery()
+const ProdutosComponent = () => {
+  const { data: produtos, isLoading } = useGetJogosQuery()
 
-
-  if(isLoading) return <h2>Carregando...</h2>
-
+  if (isLoading) return <h2>Carregando...</h2>
 
   return (
     <>
@@ -19,14 +17,11 @@ const ProdutosComponent =() =>{
             key={produto.id}
             produto={produto}
             estaNosFavoritos={false}
-            
-            
           />
         ))}
       </S.Produtos>
     </>
   )
 }
-
 
 export default ProdutosComponent
